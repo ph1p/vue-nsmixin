@@ -25,7 +25,7 @@ Vue.use(NsMixin, {
 Now you can do this:
 
 ```javascript
-nsMixin('namespace', {
+Vue.nsMixin('namespace', {
   // ...options
   data() {
     return {
