@@ -1,5 +1,12 @@
 export default {
   install(Vue, options) {
+    const pluginOptions = {
+      useFn: false,
+      seperator: '__',
+      firstLetterUpperCase: false
+      ...options
+    }
+
     Vue.nsMixin = function(namespace, nsMixin) {
       const addNamespaceToKey = data => {
         let removedReference = { ...data };
@@ -8,9 +15,13 @@ export default {
           removedReference = nsMixin.data();
         }
 
+        // iterate through object
         Object.keys(removedReference).forEach(key => {
-          removedReference[namespace + '__' + key] = removedReference[key];
+          const name = namespace + pluginOptions.seperator + key.charAt(0).toUpperCase() + key.slice(1);
 
+          removedReference[name] = removedReference[key];
+
+          // remove old value
           delete removedReference[key];
         });
 
@@ -25,7 +36,7 @@ export default {
         ...nsMixin.methods
       };
 
-      if (options && options.useFn) {
+      if (pluginOptions.useFn) {
         nsMixin.methods[namespace] = function() {
           return Object.keys(__cachedMethods).reduce((before, current) => {
             return {

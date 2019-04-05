@@ -4,6 +4,12 @@ This small script provides a solution to use "namespaced" methods, computed and 
 
 ## How to use?
 
+```bash
+npm i vue-nsmixin
+# or
+yarn add vue-nsmixin
+```
+
 ```javascript
 const NsMixin = require('vue-nsmixin');
 // or
@@ -11,6 +17,8 @@ import NsMixin from 'vue-nsmixin';
 
 Vue.use(NsMixin, {
   useFn: true // use namespace function for methods
+  seperator: '', // default "__"
+  firstLetterUpperCase: false // set first letter of method, data or computed to uppercase
 });
 ```
 
