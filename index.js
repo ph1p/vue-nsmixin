@@ -3,7 +3,7 @@ export default {
     const pluginOptions = {
       useFn: false,
       seperator: '__',
-      firstLetterUpperCase: false
+      firstLetterUpperCase: false,
       ...options
     }
 
