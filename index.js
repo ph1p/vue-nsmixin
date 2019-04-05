@@ -5,7 +5,7 @@ export default {
       seperator: '__',
       firstLetterUpperCase: false,
       ...options
-    }
+    };
 
     Vue.nsMixin = function(namespace, nsMixin) {
       const addNamespaceToKey = data => {
@@ -17,8 +17,12 @@ export default {
 
         // iterate through object
         Object.keys(removedReference).forEach(key => {
-          const name = namespace + pluginOptions.seperator + key.charAt(0).toUpperCase() + key.slice(1);
+          const tKey = pluginOptions.firstLetterUpperCase
+            ? key.charAt(0).toUpperCase() + key.slice(1)
+            : key;
+          const name = namespace + pluginOptions.seperator + tKey;
 
+          // set key and value
           removedReference[name] = removedReference[key];
 
           // remove old value
