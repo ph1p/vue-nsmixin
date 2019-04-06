@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Phil <phil@capshake.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ph1p/vue-nsmixin"
+  }
 }

@@ -1,6 +1,6 @@
-## vue-nsmixin (Namespaced mixin)
+## vue-nsmixin
 
-This small script provides a solution to use "namespaced" methods, computed and data values.
+This small script (**n**ame**s**pacemixin) provides a solution to use "namespaced" methods, computed and data values.
 
 ## How to use?
 
@@ -50,7 +50,10 @@ In your component:
 ```javascript
 this.namespace().func(); // to use this set useFn: true in options
 
+// or
+
 this.namespace__func(); // method
+
 this.namespace__value; // data
 this.namespace__cpValue; // computed
 ```
